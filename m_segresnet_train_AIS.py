@@ -97,10 +97,10 @@ val_transform = Compose([
 ])
 
 # 创建数据集和数据加载器
-train_ds = CacheDataset(data=trainlist, transform=train_transform, cache_rate=1.0, num_workers=0)
+train_ds = CacheDataset(data=trainlist, transform=train_transform, cache_rate=0.1, num_workers=0)
 train_loader = DataLoader(train_ds, batch_size=2, shuffle=True, num_workers=0, pin_memory=True)
 
-val_ds = CacheDataset(data=vallist, transform=val_transform, cache_rate=1.0, num_workers=0)
+val_ds = CacheDataset(data=vallist, transform=val_transform, cache_rate=0.1, num_workers=0)
 val_loader = DataLoader(val_ds, batch_size=1, shuffle=True, num_workers=0, pin_memory=True)
 
 # 初始化模型、损失函数、优化器和学习率调度器
